@@ -1,14 +1,41 @@
-import Head from 'next/head'
+import Link from 'next/link';
+import { GraphQLClient } from 'graphql-request';
 
-export default function Home() {
-    return (
-        <div className="bg-green-400">
-            <Head>
-                <title>Create Next App</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+export async function getStaticProps() {
+    const graphcms = new GraphQLClient(
+        'https://api-us-east-1.graphcms.com/v2/ckk2nn4g5uet201xm99ve838m/master'
+    );
 
-            <h2 className="font-bold">test</h2>
-        </div>
-    )
+  const { products } = await graphcms.request(
+        `
+        {
+            products {
+                slug
+                name
+            }
+        }
+        `
+  );
+
+    return {
+        props: {
+        products,
+        },
+    };
 }
+
+const Index = ({ products }) => {
+
+    return (
+
+        products.map(({ slug, name }) => (
+            <Link key={slug} href={`/products/${slug}`}>
+                <a>{name}</a>
+            </Link>
+        ))
+
+    )
+
+}
+
+export default Index
