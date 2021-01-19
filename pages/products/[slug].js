@@ -46,7 +46,7 @@ export async function getStaticPaths() {
     };
 }
 
-export default ({ product }) => (
+const productPage = ({ product }) => (
     <>
         <h1 className="font-bold">{product.name}</h1>
         <p>{product.description}</p>
@@ -54,3 +54,5 @@ export default ({ product }) => (
         <p><Link href="/"><a>Return to homepage</a></Link></p>
     </>
 );
+
+export default productPage

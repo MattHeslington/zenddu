@@ -1,6 +1,10 @@
-☐ Add absolute paths
-☐ Install Tailwind
+✔ Add absolute paths @done(21-01-19 11:39)
+✔ Install Tailwind @done(21-01-19 11:58)
 ☐ Copy the Tailwind config
-☐ Link to Graphcms
-☐ Test all is working
-☐ Commit and link to Vercel
+✔ Link to Graphcms @done(21-01-19 11:58)
+✔ Test all is working @done(21-01-19 11:58)
+✔ Commit and link to Vercel @done(21-01-19 11:58)
+☐ Add the existing components
+☐ Add a layout to _app.js
+☐ Build the footer
+☐ Loot at the structure of the site across the three main page types before the componentise everything
